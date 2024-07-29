@@ -69,7 +69,7 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}-${{ env.LANGUAGE }}-${{ matrix.architecture }}-artifacts
           path: ~/artifact
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4.0.1
+        uses: aws-actions/configure-aws-credentials@v4.0.2
         env:
           AWS_OPENID_ROLE_ARN: arn:aws:iam::663229565520:role/osc-team-sumo-opentelemetry-lambda-openid-connect
         with:
