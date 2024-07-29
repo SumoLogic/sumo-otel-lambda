@@ -85,7 +85,7 @@ jobs:
         run: ${{ env.BUILD_COMMAND }}
       - name: Upload artifacts - java
         if: env.LANGUAGE == 'java' && success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}-${{ env.LANGUAGE }}-${{ matrix.architecture }}-artifacts
           path: ${{ env.LANGUAGE }}/${{ env.ARTIFACT_ARCHIVE_BASE_NAME }}-${{ matrix.architecture }}.zip
@@ -97,14 +97,14 @@ jobs:
           opentelemetry-lambda/${{ env.LANGUAGE }}/sample-apps/aws-sdk/build/libs/java-sample-app.jar
       - name: Upload artifacts - java sample-app
         if: env.LANGUAGE == 'java' && success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sample-app-${{ env.LANGUAGE }}-${{ matrix.architecture }}-artifacts
           path: opentelemetry-lambda/${{ env.LANGUAGE }}/sample-apps/aws-sdk/build/libs/java-sample-app.jar
           if-no-files-found: error
       - name: Upload artifacts - nodejs
         if: env.LANGUAGE == 'nodejs' && success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}-${{ env.LANGUAGE }}-${{ matrix.architecture }}-artifacts
           path: ${{ env.LANGUAGE }}/${{ env.ARTIFACT_ARCHIVE_BASE_NAME }}-${{ matrix.architecture }}.zip
@@ -116,14 +116,14 @@ jobs:
           opentelemetry-lambda/${{ env.LANGUAGE }}/sample-apps/aws-sdk/build/nodejs-sample-app.zip
       - name: Upload artifacts - nodejs sample-app
         if: env.LANGUAGE == 'nodejs' && success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sample-app-${{ env.LANGUAGE }}-${{ matrix.architecture }}-artifacts
           path: opentelemetry-lambda/${{ env.LANGUAGE }}/sample-apps/aws-sdk/build/nodejs-sample-app.zip
           if-no-files-found: error
       - name: Upload artifacts - python layer
         if: env.LANGUAGE == 'python' && success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}-${{ env.LANGUAGE }}-${{ matrix.architecture }}-artifacts
           path: ${{ env.LANGUAGE }}/${{ env.ARTIFACT_ARCHIVE_BASE_NAME }}-${{ matrix.architecture }}.zip
@@ -135,7 +135,7 @@ jobs:
           opentelemetry-lambda/${{ env.LANGUAGE }}/sample-apps/build/python-sample-app.zip
       - name: Upload artifacts - python sample-app
         if: env.LANGUAGE == 'python' && success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sample-app-${{ env.LANGUAGE }}-${{ matrix.architecture }}-artifacts
           path: opentelemetry-lambda/${{ env.LANGUAGE }}/sample-apps/build/python-sample-app.zip

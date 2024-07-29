@@ -102,7 +102,7 @@ jobs:
           echo "| ${{ matrix.aws_region }} | $LAYER_ARN |" > layer-arn-${{ matrix.architecture }}-${{ matrix.aws_region }}
       - name: Upload Layer ARN
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}-${{ env.LANGUAGE }}-${{ matrix.architecture }}-layer-arns-artifact
           path: layer-arn-${{ matrix.architecture }}-${{ matrix.aws_region }}
