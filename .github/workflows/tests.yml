@@ -41,7 +41,7 @@ jobs:
           aws-region: ${{ matrix.aws_region }}
           mask-aws-account-id: false
       - name: Cache terraform working directory
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ env.TERRAFORM_DIRECTORY }}
           key: ${{ inputs.LANGUAGE }}-${{ github.run_id }}
@@ -205,7 +205,7 @@ jobs:
         with:
           terraform_wrapper: false
       - name: Cache terraform working directory
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ env.TERRAFORM_DIRECTORY }}
           key: ${{ inputs.LANGUAGE }}-${{ github.run_id }}
