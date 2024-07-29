@@ -31,27 +31,27 @@ jobs:
         id: extract_tag
         run: echo "::set-output name=tag::$(echo ${GITHUB_REF#refs/tags/java-v})"
       - name: Download amd64 layer artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ github.ref_name }}-java-amd64-artifacts
           path: artifacts/
       - name: Download arm64 layer artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ github.ref_name }}-java-arm64-artifacts
           path: artifacts/
       - name: Download sample-app artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: sample-app-java-amd64-artifacts
           path: artifacts/
       - name: Download amd64 Layer ARNs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ github.ref_name }}-java-amd64-layer-arns-artifact
           path: amd64layerarns/
       - name: Download arm64 Layer ARNs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ github.ref_name }}-java-arm64-layer-arns-artifact
           path: arm64layerarns/
